@@ -83,7 +83,6 @@ export default function CTANewsletterBanner() {
                 }}
                 placeholder="Enter your email address"
                 className="flex-1 bg-white/15 text-white placeholder:text-white/60 rounded-lg px-5 py-3.5 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
-                disabled={status === 'success'}
               />
               <motion.button
                 type="submit"
