@@ -57,7 +57,7 @@ const utilities = [
     id: 6,
     title: 'Reward and Loyalty Driver',
     description:
-      'FractionalBase's engagement model gives $FRAC rewards for community actions, including liquidity provision, referrals, project voting, or staking participation. This drives circular token velocity while maintaining intrinsic value through capped supply mechanisms.',
+      'FractionalBase\'s engagement model gives $FRAC rewards for community actions, including liquidity provision, referrals, project voting, or staking participation. This drives circular token velocity while maintaining intrinsic value through capped supply mechanisms.',
     icon: Gift,
     pattern: 'B' as const,
   },
