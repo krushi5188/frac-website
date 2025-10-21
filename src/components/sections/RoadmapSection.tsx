@@ -5,43 +5,43 @@ import { fadeInUp, pulse } from '@/lib/animations'
 
 const milestones = [
   {
-    quarter: 'Q4 2024',
+    quarter: 'Q1 2025',
     title: 'Platform Foundation',
     description:
       'Smart contract development and security audits completed. Token architecture finalized with multi-chain compatibility framework.',
     completed: true,
   },
   {
-    quarter: 'Q1 2025',
+    quarter: 'Q2 2025',
     title: 'Token Launch',
     description:
       '$FRAC token public sale and initial DEX listings. Community governance portal activated.',
     completed: true,
   },
   {
-    quarter: 'Q2 2025',
+    quarter: 'Q3 2025',
     title: 'Asset Onboarding',
     description:
       'First fractional real-world assets tokenized. Partnership with leading RWA custodians established.',
-    completed: false,
-    current: true,
+    completed: true,
   },
   {
-    quarter: 'Q3 2025',
+    quarter: 'Q4 2025',
     title: 'DeFi Integration',
     description:
       'Liquidity mining pools launched. Cross-chain bridge activation for Ethereum and BSC.',
     completed: false,
+    current: true,
   },
   {
-    quarter: 'Q4 2025',
+    quarter: 'Q1 2026',
     title: 'Enterprise Expansion',
     description:
       'Institutional-grade API and white-label solutions. Strategic partnerships with asset managers.',
     completed: false,
   },
   {
-    quarter: '2026+',
+    quarter: 'Q2-Q4 2026',
     title: 'Global Scale',
     description:
       'AI-powered portfolio optimization. Expansion into emerging markets and new asset classes.',
