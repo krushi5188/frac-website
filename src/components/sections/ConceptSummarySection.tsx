@@ -7,7 +7,7 @@ export default function ConceptSummarySection() {
   return (
     <section
       id="ecosystem"
-      className="py-section md:py-section px-5 md:px-10 bg-bg-dark-secondary/30 backdrop-blur-card"
+      className="py-section md:py-section px-5 md:px-10 bg-bg-navy-light/30 backdrop-blur-card"
     >
       <div className="max-w-container mx-auto">
         <motion.h2
@@ -46,15 +46,15 @@ export default function ConceptSummarySection() {
           <svg viewBox="0 0 600 400" className="w-full h-full">
             <defs>
               <linearGradient id="ecosystemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#14b8a6" />
-                <stop offset="100%" stopColor="#0d9488" />
+                <stop offset="0%" stopColor="#7c3aed" />
+                <stop offset="100%" stopColor="#5b21b6" />
               </linearGradient>
             </defs>
 
             {/* Connecting Lines */}
-            <line x1="150" y1="120" x2="300" y2="200" stroke="#14b8a6" strokeWidth="2" opacity="0.5" />
-            <line x1="450" y1="120" x2="300" y2="200" stroke="#14b8a6" strokeWidth="2" opacity="0.5" />
-            <line x1="300" y1="200" x2="300" y2="320" stroke="#14b8a6" strokeWidth="2" opacity="0.5" />
+            <line x1="150" y1="120" x2="300" y2="200" stroke="#7c3aed" strokeWidth="2" opacity="0.5" />
+            <line x1="450" y1="120" x2="300" y2="200" stroke="#7c3aed" strokeWidth="2" opacity="0.5" />
+            <line x1="300" y1="200" x2="300" y2="320" stroke="#7c3aed" strokeWidth="2" opacity="0.5" />
 
             {/* Assets Circle (Top Left) */}
             <motion.circle
