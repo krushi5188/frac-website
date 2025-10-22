@@ -22,7 +22,7 @@ export default function UtilityCard({
   index,
   diagram,
 }: UtilityCardProps) {
-  const bgClass = pattern === 'A' ? 'bg-bg-navy-light/30 backdrop-blur-card' : 'bg-bg-navy'
+  const bgClass = pattern === 'A' ? 'bg-bg-dark-secondary/30 backdrop-blur-card border-y border-white/5' : 'bg-bg-dark'
 
   return (
     <section className={`py-section md:py-section px-5 md:px-10 ${bgClass}`}>
@@ -37,8 +37,8 @@ export default function UtilityCard({
             transition={{ delay: index * 0.1 }}
             className={pattern === 'B' ? 'lg:order-2' : ''}
           >
-            <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-purple/20 mb-4">
-              <Icon className="w-5 h-5 text-primary-purple" />
+            <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 mb-4">
+              <Icon className="w-5 h-5 text-white" />
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {title}
@@ -60,7 +60,7 @@ export default function UtilityCard({
             <div className="w-full max-w-md">
               {diagram || (
                 <div className="flex items-center justify-center">
-                  <Icon className="w-32 h-32 text-primary-purple" strokeWidth={1.5} />
+                  <Icon className="w-32 h-32 text-white/20" strokeWidth={1.5} />
                 </div>
               )}
             </div>
