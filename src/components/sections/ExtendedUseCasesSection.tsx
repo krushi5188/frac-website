@@ -2,44 +2,38 @@
 
 import { motion } from 'framer-motion'
 import { fadeInUp } from '@/lib/animations'
-import Carousel from '@/components/shared/Carousel'
 import { Boxes, Building2, Droplet, Cpu, Globe } from 'lucide-react'
 
 const useCases = [
   {
     id: 1,
     icon: Boxes,
-    title: 'Fractional NFT Market',
-    description: 'Tokenization and partial sale of high-value NFTs',
-    role: 'Settlement & fractional ownership token',
+    title: 'Fractional NFTs',
+    description: 'Tokenize high-value digital collectibles',
   },
   {
     id: 2,
     icon: Building2,
-    title: 'Real-World Asset (RWA) Tokenization',
-    description: 'Fine art, collectibles, and tokenized commodities',
-    role: 'Governance and transactional currency',
+    title: 'Real-World Assets',
+    description: 'Art, commodities, and tokenized goods',
   },
   {
     id: 3,
     icon: Droplet,
-    title: 'Liquidity Mining Pools',
-    description: 'Support decentralized OTC trading',
-    role: 'Staking and reward payouts',
+    title: 'Liquidity Pools',
+    description: 'Decentralized trading and staking',
   },
   {
     id: 4,
     icon: Cpu,
-    title: 'AI & DeFi Integration',
-    description: 'Future DeFi extensions (auto-yield, dynamic pricing)',
-    role: 'Fuel for cross-application execution',
+    title: 'DeFi Integration',
+    description: 'Auto-yield and dynamic pricing',
   },
   {
     id: 5,
     icon: Globe,
-    title: 'Metaverse Asset Fractionalization',
-    description: 'Virtual land, digital collectibles, and in-game assets',
-    role: 'Cross-platform ownership token',
+    title: 'Metaverse Assets',
+    description: 'Virtual land and in-game items',
   },
 ]
 
@@ -47,53 +41,52 @@ export default function ExtendedUseCasesSection() {
   return (
     <section
       id="use-cases"
-      className="py-section md:py-section px-5 bg-bg-dark"
+      className="py-32 md:py-48 px-5 bg-bg-dark"
     >
-      <div className="max-w-container mx-auto">
-        <motion.h2
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          variants={fadeInUp}
-          className="text-section md:text-section font-bold text-white text-center mb-12"
-        >
-          Extended Use Cases & Future Modules
-        </motion.h2>
-
+      <div className="max-w-7xl mx-auto space-y-20">
+        {/* Section header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true }}
           variants={fadeInUp}
+          className="text-center space-y-6"
         >
-          <Carousel>
-            {useCases.map((useCase) => {
-              const Icon = useCase.icon
-              return (
-                <motion.div
-                  key={useCase.id}
-                  whileHover={{ scale: 1.02 }}
-                  className="h-full bg-bg-card backdrop-blur-card border border-white/10 rounded-card p-8 transition-transform duration-200"
-                >
-                  <div className="flex items-center justify-center w-15 h-15 rounded-icon bg-white/5 mb-4">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-semibold text-white mb-3">
-                    {useCase.title}
-                  </h3>
-                  <p className="text-base text-text-secondary leading-relaxed mb-4">
-                    {useCase.description}
-                  </p>
-                  <div className="inline-block bg-white/5 border border-white/10 rounded-icon px-3 py-2">
-                    <span className="text-sm font-medium text-text-secondary">
-                      {useCase.role}
-                    </span>
-                  </div>
-                </motion.div>
-              )
-            })}
-          </Carousel>
+          <h2 className="text-5xl md:text-6xl font-bold text-white">
+            Future modules
+          </h2>
         </motion.div>
+
+        {/* Simple grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {useCases.map((useCase, index) => {
+            const Icon = useCase.icon
+            return (
+              <motion.div
+                key={useCase.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-100px' }}
+                variants={fadeInUp}
+                transition={{ delay: index * 0.05 }}
+                className="group"
+              >
+                <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 h-full flex flex-col min-h-[200px]">
+                  {/* Icon */}
+                  <div className="mb-auto">
+                    <Icon className="w-8 h-8 text-white/50 mb-6" strokeWidth={1.5} />
+                    <h3 className="text-xl font-semibold text-white mb-2">
+                      {useCase.title}
+                    </h3>
+                    <p className="text-sm text-text-muted font-light">
+                      {useCase.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
       </div>
     </section>
   )
