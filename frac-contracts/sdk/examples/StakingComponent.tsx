@@ -5,6 +5,7 @@
  */
 
 import React, { useState } from "react";
+import { PublicKey } from "@solana/web3.js";
 import { useStaking, useUserBalance, useStakingConfig } from "../hooks";
 import { ProgramIds } from "../index";
 
