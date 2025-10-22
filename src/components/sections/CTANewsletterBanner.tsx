@@ -31,7 +31,7 @@ export default function CTANewsletterBanner() {
   }
 
   return (
-    <section className="py-16 md:py-20 px-5 md:px-10 bg-gradient-to-br from-primary-teal to-primary-teal-dark">
+    <section className="py-16 md:py-20 px-5 md:px-10 bg-gradient-to-br from-primary-purple to-primary-purple-dark">
       <div className="max-w-container mx-auto text-center">
         <motion.h2
           initial="hidden"
@@ -87,7 +87,7 @@ export default function CTANewsletterBanner() {
               <motion.button
                 type="submit"
                 whileHover={{ y: -2 }}
-                className="bg-white text-bg-dark font-semibold px-8 py-3.5 rounded-lg hover:bg-white/90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                className="bg-white text-bg-navy font-semibold px-8 py-3.5 rounded-lg hover:bg-white/90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
               >
                 Join Waitlist
               </motion.button>
