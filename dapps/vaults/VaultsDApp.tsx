@@ -51,7 +51,7 @@ export const VaultsDApp: React.FC<{ network: WalletAdapterNetwork }> = ({ networ
   // Trading Form
   const [sellShares, setSellShares] = useState<string>('');
   const [sellPrice, setSellPrice] = useState<string>('');
-  const [buyShares, setBuyShares] = useState<string>('');
+  const [buySharesAmount, setBuySharesAmount] = useState<string>('');
   const [selectedOrder, setSelectedOrder] = useState<any>(null);
 
   // Load order book when vault selected
@@ -170,7 +170,7 @@ export const VaultsDApp: React.FC<{ network: WalletAdapterNetwork }> = ({ networ
   const handleBuyShares = async (orderId: number, maxShares: number) => {
     if (!selectedVault || !connected) return;
 
-    const shares = parseFloat(buyShares);
+    const shares = parseFloat(buySharesAmount);
 
     if (isNaN(shares) || shares <= 0) {
       showNotification('error', 'Please enter valid share amount');
@@ -186,7 +186,7 @@ export const VaultsDApp: React.FC<{ network: WalletAdapterNetwork }> = ({ networ
       setIsProcessing(true);
       const signature = await buyShares(selectedVault.id, orderId, shares);
       showNotification('success', `Shares purchased! Tx: ${signature.slice(0, 8)}...`);
-      setBuyShares('');
+      setBuySharesAmount('');
       setSelectedOrder(null);
       await loadOrderBook(selectedVault.id);
     } catch (error: any) {
@@ -647,27 +647,27 @@ export const VaultsDApp: React.FC<{ network: WalletAdapterNetwork }> = ({ networ
               <label>Number of Shares to Buy</label>
               <input
                 type="number"
-                value={buyShares}
-                onChange={(e) => setBuyShares(e.target.value)}
+                value={buySharesAmount}
+                onChange={(e) => setBuySharesAmount(e.target.value)}
                 placeholder="Enter amount"
                 min="1"
                 max={selectedOrder.shares / 1e9}
               />
             </div>
 
-            {buyShares && (
+            {buySharesAmount && (
               <div className="calculation-box">
                 <div className="calc-row">
                   <span>Total Cost:</span>
-                  <span>{((parseFloat(buyShares) * selectedOrder.pricePerShare) / 1e9).toFixed(2)} $FRAC</span>
+                  <span>{((parseFloat(buySharesAmount) * selectedOrder.pricePerShare) / 1e9).toFixed(2)} $FRAC</span>
                 </div>
                 <div className="calc-row">
                   <span>Trading Fee ({APP_CONFIG.vault.tradingFee}%):</span>
-                  <span>{((parseFloat(buyShares) * selectedOrder.pricePerShare * APP_CONFIG.vault.tradingFee) / (100 * 1e9)).toFixed(2)} $FRAC</span>
+                  <span>{((parseFloat(buySharesAmount) * selectedOrder.pricePerShare * APP_CONFIG.vault.tradingFee) / (100 * 1e9)).toFixed(2)} $FRAC</span>
                 </div>
                 <div className="calc-row total">
                   <span>Total:</span>
-                  <span>{((parseFloat(buyShares) * selectedOrder.pricePerShare * (1 + APP_CONFIG.vault.tradingFee / 100)) / 1e9).toFixed(2)} $FRAC</span>
+                  <span>{((parseFloat(buySharesAmount) * selectedOrder.pricePerShare * (1 + APP_CONFIG.vault.tradingFee / 100)) / 1e9).toFixed(2)} $FRAC</span>
                 </div>
               </div>
             )}
@@ -678,7 +678,7 @@ export const VaultsDApp: React.FC<{ network: WalletAdapterNetwork }> = ({ networ
               </button>
               <button
                 onClick={() => handleBuyShares(selectedOrder.orderId, selectedOrder.shares / 1e9)}
-                disabled={!buyShares || isProcessing}
+                disabled={!buySharesAmount || isProcessing}
                 className="btn-primary"
               >
                 {isProcessing ? 'Buying...' : 'Confirm Purchase'}
