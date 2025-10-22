@@ -44,18 +44,18 @@ export default function RoadmapSection() {
               <div className="flex items-start gap-6 md:gap-12">
                 {/* Quarter */}
                 <div className="flex-shrink-0 w-24 md:w-32">
-                  <div className="text-sm font-medium text-text-muted">
+                  <div className={`text-sm font-medium ${milestone.current ? 'text-accent-blue' : 'text-text-muted'}`}>
                     {milestone.quarter}
                   </div>
                   {milestone.current && (
-                    <div className="mt-2 text-xs text-white/50">CURRENT</div>
+                    <div className="mt-2 text-xs text-accent-blue/70">CURRENT</div>
                   )}
                 </div>
 
-                {/* Dot */}
+                {/* Dot with blue accent for current */}
                 <div className="flex-shrink-0 mt-1">
                   <div className={`w-3 h-3 rounded-full ${
-                    milestone.current ? 'bg-white' : 'bg-white/20'
+                    milestone.current ? 'bg-accent-blue shadow-lg shadow-accent-blue/50' : 'bg-white/20'
                   }`} />
                 </div>
 
