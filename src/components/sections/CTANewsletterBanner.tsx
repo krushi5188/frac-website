@@ -31,7 +31,7 @@ export default function CTANewsletterBanner() {
   }
 
   return (
-    <section className="py-16 md:py-20 px-5 md:px-10 bg-gradient-to-br from-primary-purple to-primary-purple-dark">
+    <section className="py-16 md:py-20 px-5 md:px-10 bg-bg-dark border-y border-white/10">
       <div className="max-w-container mx-auto text-center">
         <motion.h2
           initial="hidden"
@@ -49,7 +49,7 @@ export default function CTANewsletterBanner() {
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeInUp}
           transition={{ delay: 0.15 }}
-          className="text-lg text-white/90 mb-8"
+          className="text-lg text-text-secondary mb-8"
         >
           Get early access and exclusive updates
         </motion.p>
@@ -67,12 +67,12 @@ export default function CTANewsletterBanner() {
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="bg-white/20 backdrop-blur-card rounded-button p-4 text-white font-semibold"
+              className="bg-white/10 backdrop-blur-card rounded-button p-4 text-white font-semibold"
             >
               ✓ Thanks! We'll be in touch soon.
             </motion.div>
           ) : (
-            <div className="flex flex-col md:flex-row gap-3 bg-white/10 backdrop-blur-card rounded-button p-2">
+            <div className="flex flex-col md:flex-row gap-3 bg-white/5 backdrop-blur-card rounded-button p-2 border border-white/10">
               <input
                 type="email"
                 value={email}
@@ -82,12 +82,12 @@ export default function CTANewsletterBanner() {
                   setErrorMessage('')
                 }}
                 placeholder="Enter your email address"
-                className="flex-1 bg-white/15 text-white placeholder:text-white/60 rounded-lg px-5 py-3.5 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
+                className="flex-1 bg-transparent text-white placeholder:text-text-muted rounded-lg px-5 py-3.5 focus:outline-none focus:ring-1 focus:ring-white/20 transition-all"
               />
               <motion.button
                 type="submit"
-                whileHover={{ y: -2 }}
-                className="bg-white text-bg-navy font-semibold px-8 py-3.5 rounded-lg hover:bg-white/90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                whileHover={{ scale: 1.02 }}
+                className="bg-white text-black font-semibold px-8 py-3.5 rounded-lg hover:bg-white/90 transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-white/50"
               >
                 Join Waitlist
               </motion.button>
@@ -98,7 +98,7 @@ export default function CTANewsletterBanner() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="mt-2 text-sm text-white/90"
+              className="mt-2 text-sm text-text-secondary"
             >
               {errorMessage}
             </motion.p>
