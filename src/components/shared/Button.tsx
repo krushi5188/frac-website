@@ -21,8 +21,8 @@ export default function Button({
   const baseStyles = 'px-10 py-4 rounded-button font-semibold transition-all duration-200'
 
   const variantStyles = {
-    primary: 'bg-gradient-to-br from-primary-teal to-primary-teal-dark text-white hover:from-primary-teal-dark hover:to-primary-teal-dark',
-    secondary: 'bg-transparent border-2 border-primary-teal text-text-secondary hover:bg-primary-teal/10',
+    primary: 'bg-gradient-to-br from-primary-purple to-primary-purple-dark text-white hover:from-primary-purple-dark hover:to-primary-purple-dark',
+    secondary: 'bg-transparent border-2 border-primary-purple text-text-secondary hover:bg-primary-purple/10',
   }
 
   return (
