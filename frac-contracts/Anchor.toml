@@ -1,0 +1,46 @@
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+frac_token = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+fractional_ownership = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+staking = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+governance = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+access_control = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+rewards = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+enterprise = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+bridge = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+[programs.devnet]
+frac_token = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+fractional_ownership = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+staking = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+governance = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+access_control = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+rewards = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+enterprise = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+bridge = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+[programs.mainnet]
+frac_token = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+fractional_ownership = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+staking = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+governance = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+access_control = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+rewards = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+enterprise = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+bridge = "FRACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+
+[test]
+startup_wait = 5000
