@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ReactNode } from 'react'
+import { ReactNode, useRef, useState } from 'react'
 
 interface ButtonProps {
   variant?: 'primary' | 'secondary'
@@ -18,6 +18,27 @@ export default function Button({
   className = '',
   type = 'button',
 }: ButtonProps) {
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const [position, setPosition] = useState({ x: 0, y: 0 })
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (!buttonRef.current) return
+    
+    const rect = buttonRef.current.getBoundingClientRect()
+    const centerX = rect.left + rect.width / 2
+    const centerY = rect.top + rect.height / 2
+    
+    // Calculate distance from center
+    const deltaX = (e.clientX - centerX) * 0.15 // Reduced multiplier for subtlety
+    const deltaY = (e.clientY - centerY) * 0.15
+    
+    setPosition({ x: deltaX, y: deltaY })
+  }
+
+  const handleMouseLeave = () => {
+    setPosition({ x: 0, y: 0 })
+  }
+
   const baseStyles = 'px-10 py-4 rounded-button font-semibold transition-all duration-200'
 
   const variantStyles = {
@@ -27,11 +48,22 @@ export default function Button({
 
   return (
     <motion.button
+      ref={buttonRef}
       type={type}
       onClick={onClick}
       className={`${baseStyles} ${variantStyles[variant]} ${className}`}
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.2 }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      animate={{ 
+        x: position.x, 
+        y: position.y,
+        scale: position.x !== 0 || position.y !== 0 ? 1.02 : 1
+      }}
+      transition={{ 
+        type: "spring", 
+        stiffness: 200, 
+        damping: 20 
+      }}
     >
       {children}
     </motion.button>
