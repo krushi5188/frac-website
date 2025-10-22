@@ -23,7 +23,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-section md:py-section px-5 md:px-10 bg-bg-dark-secondary/30 backdrop-blur-card">
+    <section className="py-section md:py-section px-5 md:px-10 bg-bg-navy-light/30 backdrop-blur-card">
       <div className="max-w-container mx-auto">
         <motion.h2
           initial="hidden"
@@ -46,7 +46,7 @@ export default function StatsSection() {
               transition={{ delay: index * 0.2 }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-text-gold mb-2">
                 {stat.value}
               </div>
               <div className="text-xl md:text-2xl font-semibold text-text-secondary mb-1">
