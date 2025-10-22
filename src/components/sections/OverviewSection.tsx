@@ -1,58 +1,35 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { fadeInUp, staggerContainer } from '@/lib/animations'
+import { fadeInUp } from '@/lib/animations'
 
 export default function OverviewSection() {
   return (
     <section
       id="overview"
-      className="py-section md:py-section px-5 bg-bg-dark"
+      className="py-32 md:py-48 px-5 bg-bg-dark"
     >
-      <div className="max-w-container mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center space-y-8">
         <motion.h2
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeInUp}
-          className="text-section md:text-section font-bold text-white mb-8"
+          className="text-5xl md:text-6xl font-bold text-white leading-tight"
         >
-          The Future of Asset Ownership
+          Break down barriers
         </motion.h2>
 
-        <motion.div
+        <motion.p
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          variants={staggerContainer}
-          className="max-w-content mx-auto space-y-5"
+          variants={fadeInUp}
+          transition={{ delay: 0.2 }}
+          className="text-xl md:text-2xl text-text-secondary leading-relaxed font-light max-w-3xl mx-auto"
         >
-          <motion.p variants={fadeInUp} className="text-lg text-text-secondary leading-relaxed">
-            High-value assets have traditionally been accessible only to wealthy investors, creating
-            barriers to entry for everyday individuals. Premium digital assets, fine art NFTs, and
-            tokenized commodities often require significant capital investment, leaving millions unable to
-            participate in wealth-building opportunities. FractionalBase breaks down these barriers
-            by enabling true fractional ownership—allowing anyone to own a piece of valuable assets
-            through blockchain technology.
-          </motion.p>
-
-          <motion.p variants={fadeInUp} className="text-lg text-text-secondary leading-relaxed">
-            At the heart of the FractionalBase ecosystem is the $FRAC token. More than just a
-            cryptocurrency, $FRAC represents your stake in a new paradigm of asset ownership. It
-            functions simultaneously as a medium of exchange for all platform transactions, a
-            governance tool giving holders voting power over ecosystem decisions, and a utility
-            token unlocking exclusive access to premium features and high-yield staking
-            opportunities.
-          </motion.p>
-
-          <motion.p variants={fadeInUp} className="text-lg text-text-secondary leading-relaxed">
-            Whether you're interested in tokenized art, NFT ownership, metaverse assets, or digital
-            collectibles, $FRAC provides a unified gateway to diverse investment opportunities.
-            With built-in staking rewards, community governance, cross-chain compatibility, and
-            enterprise-grade security, the FractionalBase ecosystem is designed for sustainable
-            growth—prioritizing utility and real value over speculative hype.
-          </motion.p>
-        </motion.div>
+          High-value assets have been locked behind wealth barriers. $FRAC enables anyone to own fractions of premium digital assets, NFTs, and tokenized commodities through blockchain infrastructure.
+        </motion.p>
       </div>
     </section>
   )
