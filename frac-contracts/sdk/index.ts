@@ -669,19 +669,7 @@ export class BridgeModule {
   }
 }
 
-// Export all modules
-export {
-  FracTokenModule,
-  StakingModule,
-  FractionalOwnershipModule,
-  GovernanceModule,
-  AccessControlModule,
-  RewardsModule,
-  EnterpriseModule,
-  BridgeModule,
-};
-
-// Export types
+// Export types from generated IDLs
 export * from "../target/types/frac_token";
 export * from "../target/types/staking";
 export * from "../target/types/fractional_ownership";
