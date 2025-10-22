@@ -8,23 +8,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary colors
+        // Primary colors - Psychology-based premium palette
         primary: {
-          teal: '#14b8a6',
-          'teal-dark': '#0d9488',
+          purple: '#5b21b6',        // Deep Purple - Luxury, Royalty
+          'purple-light': '#7c3aed', // Light Purple
+          'purple-dark': '#4c1d95',  // Dark Purple
+          gold: '#d4af37',           // Gold - Wealth, Prestige
+          'gold-light': '#f4d03f',   // Light Gold
+          'gold-dark': '#b8941f',    // Dark Gold
         },
-        // Background colors
+        // Background colors - Navy and Charcoal for trust & authority
         bg: {
-          dark: '#0d1b2a',
-          'dark-secondary': '#1b3a4b',
-          'card': 'rgba(27, 58, 75, 0.6)',
-          'footer': '#0a0e1a',
+          navy: '#0f172a',              // Navy Blue - Trust, Stability
+          'navy-light': '#1e293b',      // Charcoal - Authority
+          'navy-lighter': '#334155',    // Lighter Navy
+          'card': 'rgba(30, 41, 59, 0.6)', // Charcoal with transparency
+          'footer': '#0a0e1a',          // Deep Navy for footer
         },
-        // Text colors
+        // Text colors - White and Silver for sophistication
         text: {
-          primary: '#ffffff',
-          secondary: '#b0d4e3',
-          muted: '#7a8a99',
+          primary: '#ffffff',           // Pure White
+          secondary: '#cbd5e1',         // Silver/Light Gray
+          muted: '#94a3b8',             // Muted Silver
+          gold: '#d4af37',              // Gold for highlights
         },
         // Semantic colors
         success: '#10b981',
