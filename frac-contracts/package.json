@@ -1,0 +1,43 @@
+{
+  "name": "fractionalbase-contracts",
+  "version": "0.1.0",
+  "description": "FractionalBase Solana Smart Contracts",
+  "main": "index.js",
+  "scripts": {
+    "build": "anchor build",
+    "test": "anchor test",
+    "deploy:localnet": "anchor deploy",
+    "deploy:devnet": "anchor deploy --provider.cluster devnet",
+    "deploy:mainnet": "anchor deploy --provider.cluster mainnet-beta",
+    "verify": "anchor verify",
+    "idl:init": "anchor idl init",
+    "idl:upgrade": "anchor idl upgrade"
+  },
+  "keywords": [
+    "solana",
+    "anchor",
+    "fractional",
+    "defi",
+    "nft",
+    "rwa"
+  ],
+  "author": "FractionalBase Team",
+  "license": "PROPRIETARY",
+  "devDependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@solana/web3.js": "^1.87.0",
+    "@solana/spl-token": "^0.3.9",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^5.3.3",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6"
+  },
+  "dependencies": {
+    "@project-serum/anchor": "^0.26.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
