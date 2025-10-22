@@ -8,29 +8,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary colors - Psychology-based premium palette
+        // Modern minimal premium palette - Stripe/Linear/Vercel style
         primary: {
-          purple: '#5b21b6',        // Deep Purple - Luxury, Royalty
-          'purple-light': '#7c3aed', // Light Purple
-          'purple-dark': '#4c1d95',  // Dark Purple
-          gold: '#d4af37',           // Gold - Wealth, Prestige
-          'gold-light': '#f4d03f',   // Light Gold
-          'gold-dark': '#b8941f',    // Dark Gold
+          blue: '#3b82f6',           // Subtle blue accent
+          'blue-light': '#60a5fa',   // Lighter blue
+          'blue-dark': '#2563eb',    // Darker blue
         },
-        // Background colors - Navy and Charcoal for trust & authority
+        // True black/dark backgrounds - modern premium
         bg: {
-          navy: '#0f172a',              // Navy Blue - Trust, Stability
-          'navy-light': '#1e293b',      // Charcoal - Authority
-          'navy-lighter': '#334155',    // Lighter Navy
-          'card': 'rgba(30, 41, 59, 0.6)', // Charcoal with transparency
-          'footer': '#0a0e1a',          // Deep Navy for footer
+          black: '#000000',              // True black
+          dark: '#0a0a0a',               // Near black
+          'dark-secondary': '#141414',   // Subtle lift
+          'card': 'rgba(20, 20, 20, 0.5)', // Dark card with transparency
+          'footer': '#000000',           // Pure black footer
         },
-        // Text colors - White and Silver for sophistication
+        // Minimal gray text - modern and clean
         text: {
-          primary: '#ffffff',           // Pure White
-          secondary: '#cbd5e1',         // Silver/Light Gray
-          muted: '#94a3b8',             // Muted Silver
-          gold: '#d4af37',              // Gold for highlights
+          primary: '#ffffff',           // Pure white
+          secondary: '#a1a1aa',         // Subtle gray
+          muted: '#71717a',             // More muted
+          accent: '#3b82f6',            // Blue for highlights
         },
         // Semantic colors
         success: '#10b981',
