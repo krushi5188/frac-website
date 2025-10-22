@@ -6,12 +6,19 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 0;
+    scroll-snap-type: y proximity;
   }
-
+  
   body {
     background: #000000;
     background-attachment: fixed;
     color: #ffffff;
+  }
+
+  /* Smooth scroll snap for sections */
+  section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
   }
 }
 
@@ -26,5 +33,10 @@
   .backdrop-blur-card {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Gradient radial utility for hero */
+  .bg-gradient-radial {
+    background: radial-gradient(circle at center, var(--tw-gradient-stops));
   }
 }
