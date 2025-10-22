@@ -21,8 +21,8 @@ export default function Button({
   const baseStyles = 'px-10 py-4 rounded-button font-semibold transition-all duration-200'
 
   const variantStyles = {
-    primary: 'bg-gradient-to-br from-primary-purple to-primary-purple-dark text-white hover:from-primary-purple-dark hover:to-primary-purple-dark',
-    secondary: 'bg-transparent border-2 border-primary-purple text-text-secondary hover:bg-primary-purple/10',
+    primary: 'bg-white text-black hover:bg-white/90',
+    secondary: 'bg-transparent border border-white/20 text-white hover:border-white/40 hover:bg-white/5',
   }
 
   return (
@@ -30,7 +30,7 @@ export default function Button({
       type={type}
       onClick={onClick}
       className={`${baseStyles} ${variantStyles[variant]} ${className}`}
-      whileHover={{ scale: 1.05 }}
+      whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.2 }}
     >
       {children}
