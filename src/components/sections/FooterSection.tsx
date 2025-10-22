@@ -39,7 +39,7 @@ export default function FooterSection() {
               </div>
             </div>
             <p className="text-sm text-text-muted leading-relaxed max-w-[300px]">
-              Fractional ownership of real-world and digital assets powered by blockchain
+              Fractional ownership of digital assets, NFTs, and tokenized commodities powered by blockchain
               technology.
             </p>
           </div>
