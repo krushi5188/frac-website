@@ -29,8 +29,8 @@ export default function OverviewSection() {
         >
           <motion.p variants={fadeInUp} className="text-lg text-text-secondary leading-relaxed">
             High-value assets have traditionally been accessible only to wealthy investors, creating
-            barriers to entry for everyday individuals. Real estate, fine art, and premium digital
-            assets often require significant capital investment, leaving millions unable to
+            barriers to entry for everyday individuals. Premium digital assets, fine art NFTs, and
+            tokenized commodities often require significant capital investment, leaving millions unable to
             participate in wealth-building opportunities. FractionalBase breaks down these barriers
             by enabling true fractional ownership—allowing anyone to own a piece of valuable assets
             through blockchain technology.
@@ -46,11 +46,11 @@ export default function OverviewSection() {
           </motion.p>
 
           <motion.p variants={fadeInUp} className="text-lg text-text-secondary leading-relaxed">
-            Whether you're interested in fractional real estate, tokenized art, NFT ownership, or
-            metaverse assets, $FRAC provides a unified gateway to diverse investment opportunities.
+            Whether you're interested in tokenized art, NFT ownership, metaverse assets, or digital
+            collectibles, $FRAC provides a unified gateway to diverse investment opportunities.
             With built-in staking rewards, community governance, cross-chain compatibility, and
             enterprise-grade security, the FractionalBase ecosystem is designed for sustainable
-            growth—prioritizing utility and real-world value over speculative hype.
+            growth—prioritizing utility and real value over speculative hype.
           </motion.p>
         </motion.div>
       </div>
