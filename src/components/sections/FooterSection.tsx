@@ -52,7 +52,7 @@ export default function FooterSection() {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollToSection(link.sectionId)}
-                    className="text-sm text-text-secondary hover:text-primary-teal transition-colors duration-200 text-left"
+                    className="text-sm text-text-secondary hover:text-primary-purple transition-colors duration-200 text-left"
                   >
                     {link.label}
                   </button>
@@ -74,7 +74,7 @@ export default function FooterSection() {
                     onClick={(e) => e.preventDefault()}
                     aria-label={social.label}
                     whileHover={{ scale: 1.1 }}
-                    className="flex items-center justify-center w-12 h-12 rounded-lg bg-transparent hover:bg-primary-teal/10 text-text-secondary hover:text-primary-teal transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary-teal"
+                    className="flex items-center justify-center w-12 h-12 rounded-lg bg-transparent hover:bg-primary-purple/10 text-text-secondary hover:text-primary-purple transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary-purple"
                   >
                     <Icon className="w-6 h-6" />
                   </motion.a>
@@ -85,7 +85,7 @@ export default function FooterSection() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary-teal/20 pt-6">
+        <div className="border-t border-primary-purple/20 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-text-muted">
               © 2025 FractionalBase. All rights reserved.
