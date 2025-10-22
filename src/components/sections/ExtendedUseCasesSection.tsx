@@ -47,7 +47,7 @@ export default function ExtendedUseCasesSection() {
   return (
     <section
       id="use-cases"
-      className="py-section md:py-section px-5 bg-bg-dark"
+      className="py-section md:py-section px-5 bg-bg-navy"
     >
       <div className="max-w-container mx-auto">
         <motion.h2
@@ -73,9 +73,9 @@ export default function ExtendedUseCasesSection() {
                 <motion.div
                   key={useCase.id}
                   whileHover={{ scale: 1.03 }}
-                  className="h-full bg-bg-card backdrop-blur-card border border-primary-teal/20 rounded-card p-8 transition-transform duration-200"
+                  className="h-full bg-bg-card backdrop-blur-card border border-primary-purple/20 rounded-card p-8 transition-transform duration-200"
                 >
-                  <div className="flex items-center justify-center w-15 h-15 rounded-icon bg-gradient-to-br from-primary-teal to-primary-teal-dark mb-4">
+                  <div className="flex items-center justify-center w-15 h-15 rounded-icon bg-gradient-to-br from-primary-purple to-primary-purple-dark mb-4">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-semibold text-white mb-3">
@@ -84,8 +84,8 @@ export default function ExtendedUseCasesSection() {
                   <p className="text-base text-text-secondary leading-relaxed mb-4">
                     {useCase.description}
                   </p>
-                  <div className="inline-block bg-primary-teal/20 border border-primary-teal rounded-icon px-3 py-2">
-                    <span className="text-sm font-medium text-primary-teal">
+                  <div className="inline-block bg-primary-purple/20 border border-primary-purple rounded-icon px-3 py-2">
+                    <span className="text-sm font-medium text-primary-purple">
                       {useCase.role}
                     </span>
                   </div>
