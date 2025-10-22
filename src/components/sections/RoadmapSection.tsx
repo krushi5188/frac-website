@@ -51,7 +51,7 @@ const milestones = [
 
 export default function RoadmapSection() {
   return (
-    <section className="py-section md:py-section px-5 md:px-10 bg-bg-dark">
+    <section className="py-section md:py-section px-5 md:px-10 bg-bg-navy">
       <div className="max-w-[1000px] mx-auto">
         <motion.h2
           initial="hidden"
@@ -65,7 +65,7 @@ export default function RoadmapSection() {
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary-teal/30" />
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary-purple/30" />
 
           {/* Milestones */}
           <div className="space-y-16">
@@ -83,19 +83,19 @@ export default function RoadmapSection() {
                 <motion.div
                   className={`absolute left-6 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-3 ${
                     milestone.completed
-                      ? 'bg-primary-teal border-primary-teal'
-                      : 'bg-bg-dark border-primary-teal/30'
+                      ? 'bg-primary-purple border-primary-purple'
+                      : 'bg-bg-navy border-primary-purple/30'
                   }`}
                   animate={milestone.completed ? pulse : {}}
                 />
 
                 {/* Content */}
                 <div className={`ml-20 md:ml-0 ${index % 2 === 0 ? 'md:pr-[calc(50%+40px)]' : 'md:pl-[calc(50%+40px)]'}`}>
-                  <div className="bg-bg-dark-secondary/30 backdrop-blur-card border border-primary-teal/20 rounded-card p-6">
-                    <div className="text-sm font-semibold text-primary-teal mb-2">
+                  <div className="bg-bg-navy-light/30 backdrop-blur-card border border-primary-purple/20 rounded-card p-6">
+                    <div className="text-sm font-semibold text-primary-purple mb-2">
                       {milestone.quarter}
                       {milestone.current && (
-                        <span className="ml-2 px-2 py-1 bg-primary-teal/20 rounded text-xs">
+                        <span className="ml-2 px-2 py-1 bg-primary-purple/20 rounded text-xs">
                           CURRENT
                         </span>
                       )}
