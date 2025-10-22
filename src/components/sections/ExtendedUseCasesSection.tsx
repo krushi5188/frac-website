@@ -38,7 +38,7 @@ const useCases = [
     id: 5,
     icon: Globe,
     title: 'Metaverse Asset Fractionalization',
-    description: 'Virtual real estate and digital collectibles',
+    description: 'Virtual land, digital collectibles, and in-game assets',
     role: 'Cross-platform ownership token',
   },
 ]
