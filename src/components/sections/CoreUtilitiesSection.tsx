@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { fadeInUp } from '@/lib/animations'
+import { useRef, useState } from 'react'
 import {
   PieChart,
   ArrowRightLeft,
@@ -64,6 +65,83 @@ const utilities = [
   },
 ]
 
+function UtilityCard({ utility, index }: { utility: typeof utilities[0], index: number }) {
+  const cardRef = useRef<HTMLDivElement>(null)
+  const [rotateX, setRotateX] = useState(0)
+  const [rotateY, setRotateY] = useState(0)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return
+
+    const rect = cardRef.current.getBoundingClientRect()
+    const centerX = rect.left + rect.width / 2
+    const centerY = rect.top + rect.height / 2
+
+    const deltaX = (e.clientX - centerX) / (rect.width / 2)
+    const deltaY = (e.clientY - centerY) / (rect.height / 2)
+
+    // Subtle tilt - only 3 degrees max
+    setRotateX(-deltaY * 3)
+    setRotateY(deltaX * 3)
+  }
+
+  const handleMouseLeave = () => {
+    setRotateX(0)
+    setRotateY(0)
+  }
+
+  const Icon = utility.icon
+
+  return (
+    <motion.div
+      ref={cardRef}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-100px' }}
+      variants={fadeInUp}
+      transition={{ delay: index * 0.05 }}
+      className="group relative"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ perspective: 1000 }}
+    >
+      <motion.div
+        animate={{
+          rotateX,
+          rotateY,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 200,
+          damping: 20
+        }}
+        style={{ transformStyle: 'preserve-3d' }}
+        className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] hover:border-accent-blue/20 transition-all duration-500 h-full flex flex-col min-h-[220px]"
+      >
+        {/* Icon */}
+        <div className="mb-6">
+          <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-accent-blue/10 transition-colors duration-500">
+            <Icon className="w-6 h-6 text-white/70 group-hover:text-accent-blue transition-colors duration-500" strokeWidth={1.5} />
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 space-y-3">
+          <h3 className="text-2xl font-semibold text-white">
+            {utility.title}
+          </h3>
+          <p className="text-base text-text-muted font-light leading-relaxed">
+            {utility.description}
+          </p>
+        </div>
+
+        {/* Subtle corner gradient with blue tint */}
+        <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-accent-blue/[0.05] to-transparent rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      </motion.div>
+    </motion.div>
+  )
+}
+
 export default function CoreUtilitiesSection() {
   return (
     <section id="utilities" className="py-32 md:py-48 px-5 bg-bg-dark">
@@ -86,42 +164,9 @@ export default function CoreUtilitiesSection() {
 
         {/* Bento box grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {utilities.map((utility, index) => {
-            const Icon = utility.icon
-            return (
-              <motion.div
-                key={utility.id}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-100px' }}
-                variants={fadeInUp}
-                transition={{ delay: index * 0.05 }}
-                className="group relative"
-              >
-                <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] hover:border-accent-blue/20 transition-all duration-500 h-full flex flex-col min-h-[220px]">
-                  {/* Icon */}
-                  <div className="mb-6">
-                    <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-accent-blue/10 transition-colors duration-500">
-                      <Icon className="w-6 h-6 text-white/70 group-hover:text-accent-blue transition-colors duration-500" strokeWidth={1.5} />
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 space-y-3">
-                    <h3 className="text-2xl font-semibold text-white">
-                      {utility.title}
-                    </h3>
-                    <p className="text-base text-text-muted font-light leading-relaxed">
-                      {utility.description}
-                    </p>
-                  </div>
-
-                  {/* Subtle corner gradient with blue tint */}
-                  <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-accent-blue/[0.05] to-transparent rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-              </motion.div>
-            )
-          })}
+          {utilities.map((utility, index) => (
+            <UtilityCard key={utility.id} utility={utility} index={index} />
+          ))}
         </div>
       </div>
     </section>
