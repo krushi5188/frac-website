@@ -34,7 +34,7 @@ export default function StatsSection() {
               transition={{ delay: index * 0.1 }}
               className="relative group"
             >
-              <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-12 hover:bg-white/[0.04] transition-all duration-500 h-full flex flex-col justify-between min-h-[280px]">
+              <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-12 hover:bg-white/[0.04] hover:border-accent-blue/20 transition-all duration-500 h-full flex flex-col justify-between min-h-[280px]">
                 <div className="space-y-4">
                   <div className="text-sm font-medium text-text-muted uppercase tracking-wider">
                     {stat.label}
@@ -44,8 +44,8 @@ export default function StatsSection() {
                   </div>
                 </div>
                 
-                {/* Subtle corner accent */}
-                <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-white/[0.02] to-transparent rounded-3xl pointer-events-none" />
+                {/* Subtle corner accent with blue */}
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-accent-blue/[0.03] to-transparent rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             </motion.div>
           ))}
