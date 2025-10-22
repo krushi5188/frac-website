@@ -8,26 +8,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Modern minimal premium palette - Stripe/Linear/Vercel style
+        // Subtle accent color - very minimal blue
+        accent: {
+          blue: '#60a5fa',           // Subtle blue accent
+          'blue-hover': '#93c5fd',   // Lighter on hover
+        },
+        // Modern minimal premium palette
         primary: {
-          blue: '#3b82f6',           // Subtle blue accent
-          'blue-light': '#60a5fa',   // Lighter blue
-          'blue-dark': '#2563eb',    // Darker blue
+          blue: '#3b82f6',
+          'blue-light': '#60a5fa',
+          'blue-dark': '#2563eb',
         },
-        // True black/dark backgrounds - modern premium
+        // True black/dark backgrounds
         bg: {
-          black: '#000000',              // True black
-          dark: '#0a0a0a',               // Near black
-          'dark-secondary': '#141414',   // Subtle lift
-          'card': 'rgba(20, 20, 20, 0.5)', // Dark card with transparency
-          'footer': '#000000',           // Pure black footer
+          black: '#000000',
+          dark: '#0a0a0a',
+          'dark-secondary': '#141414',
+          'card': 'rgba(20, 20, 20, 0.5)',
+          'footer': '#000000',
         },
-        // Minimal gray text - modern and clean
+        // Minimal gray text
         text: {
-          primary: '#ffffff',           // Pure white
-          secondary: '#a1a1aa',         // Subtle gray
-          muted: '#71717a',             // More muted
-          accent: '#3b82f6',            // Blue for highlights
+          primary: '#ffffff',
+          secondary: '#a1a1aa',
+          muted: '#71717a',
+          accent: '#60a5fa',
         },
         // Semantic colors
         success: '#10b981',
