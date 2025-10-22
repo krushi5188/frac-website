@@ -5,18 +5,18 @@ import { fadeInUp } from '@/lib/animations'
 
 const stats = [
   {
-    value: '500+',
-    description: 'Fractionalized assets',
+    value: 'Coming Soon',
+    description: 'Pre-launch phase',
     label: 'Total Assets',
   },
   {
-    value: '10,000+',
-    description: 'Active holders',
+    value: 'Coming Soon',
+    description: 'Join the waitlist',
     label: 'Community Members',
   },
   {
-    value: '$500M+',
-    description: 'Across ecosystem',
+    value: 'Coming Soon',
+    description: 'Launching Q1 2026',
     label: 'Total Value Locked',
   },
 ]
