@@ -1,6 +1,8 @@
 # Anchor
 .anchor
 target/
+!target/types/
+!target/types/*.ts
 **/*.rs.bk
 Cargo.lock
 test-ledger/
