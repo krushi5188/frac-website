@@ -55,7 +55,7 @@ export default function ProgressIndicator() {
           return (
             <div key={section.id} className="group relative flex items-center justify-end">
               <motion.span
-                className="absolute right-full mr-4 px-3 py-1 bg-bg-dark-secondary/90 backdrop-blur-card rounded-lg text-sm text-text-secondary whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                className="absolute right-full mr-4 px-3 py-1 bg-bg-navy-light/90 backdrop-blur-card rounded-lg text-sm text-text-secondary whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
               >
@@ -65,10 +65,10 @@ export default function ProgressIndicator() {
                 onClick={() => scrollToSection(section.id)}
                 aria-label={`Go to ${section.label}`}
                 aria-current={isActive ? 'true' : undefined}
-                className={`transition-all duration-200 rounded-full focus-visible:outline-2 focus-visible:outline-primary-teal ${
+                className={`transition-all duration-200 rounded-full focus-visible:outline-2 focus-visible:outline-primary-purple ${
                   isActive
-                    ? 'w-4 h-4 bg-primary-teal'
-                    : 'w-3 h-3 bg-transparent border-2 border-primary-teal hover:bg-primary-teal/30'
+                    ? 'w-4 h-4 bg-primary-purple'
+                    : 'w-3 h-3 bg-transparent border-2 border-primary-purple hover:bg-primary-purple/30'
                 }`}
               />
             </div>
@@ -79,7 +79,7 @@ export default function ProgressIndicator() {
       {/* Mobile: Bottom horizontal */}
       <nav
         aria-label="Page navigation"
-        className="lg:hidden fixed bottom-8 left-1/2 -translate-x-1/2 flex gap-3 bg-bg-dark-secondary/90 backdrop-blur-card px-6 py-3 rounded-full z-50"
+        className="lg:hidden fixed bottom-8 left-1/2 -translate-x-1/2 flex gap-3 bg-bg-navy-light/90 backdrop-blur-card px-6 py-3 rounded-full z-50"
       >
         {sections.map((section) => {
           const isActive = activeSection === section.id
@@ -89,10 +89,10 @@ export default function ProgressIndicator() {
               onClick={() => scrollToSection(section.id)}
               aria-label={`Go to ${section.label}`}
               aria-current={isActive ? 'true' : undefined}
-              className={`transition-all duration-200 rounded-full focus-visible:outline-2 focus-visible:outline-primary-teal ${
+              className={`transition-all duration-200 rounded-full focus-visible:outline-2 focus-visible:outline-primary-purple ${
                 isActive
-                  ? 'w-4 h-4 bg-primary-teal'
-                  : 'w-3 h-3 bg-transparent border-2 border-primary-teal'
+                  ? 'w-4 h-4 bg-primary-purple'
+                  : 'w-3 h-3 bg-transparent border-2 border-primary-purple'
               }`}
             />
           )
