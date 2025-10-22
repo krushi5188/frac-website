@@ -17,7 +17,7 @@ const utilities = [
     id: 1,
     title: 'Fractional Ownership Layer',
     description:
-      '$FRAC represents fractional ownership of underlying assets — whether real-world (real estate, commodities) or digital (NFTs, IP, metaverse assets). It allows users to hold, trade, and transfer ownership portions seamlessly through blockchain infrastructure.',
+      '$FRAC represents fractional ownership of underlying assets — whether digital (NFTs, IP, metaverse assets) or tokenized commodities. It allows users to hold, trade, and transfer ownership portions seamlessly through blockchain infrastructure.',
     icon: PieChart,
     pattern: 'A' as const,
   },
