@@ -4,114 +4,70 @@ import { motion } from 'framer-motion'
 import { fadeInUp } from '@/lib/animations'
 
 const milestones = [
-  {
-    quarter: 'Q1 2026',
-    title: 'Platform Foundation',
-    description:
-      'Smart contract development and security audits. Token architecture design with multi-chain compatibility framework.',
-    completed: false,
-    current: true,
-  },
-  {
-    quarter: 'Q2 2026',
-    title: 'Token Launch',
-    description:
-      '$FRAC token public sale and initial DEX listings. Community governance portal activation.',
-    completed: false,
-  },
-  {
-    quarter: 'Q3 2026',
-    title: 'Digital Asset Onboarding',
-    description:
-      'First fractional NFTs and digital assets tokenized. Launch of metaverse asset fractionalization platform.',
-    completed: false,
-  },
-  {
-    quarter: 'Q4 2026',
-    title: 'DeFi Integration',
-    description:
-      'Liquidity mining pools launched. Cross-chain bridge activation for Ethereum and BSC.',
-    completed: false,
-  },
-  {
-    quarter: 'Q1 2027',
-    title: 'Enterprise Expansion',
-    description:
-      'Institutional-grade API and white-label solutions. Strategic partnerships with digital asset custodians.',
-    completed: false,
-  },
-  {
-    quarter: 'Q2-Q4 2027',
-    title: 'Real-World Assets & Global Scale',
-    description:
-      'Real estate tokenization (pending regulatory approval). AI-powered portfolio optimization. Expansion into emerging markets and new asset classes.',
-    completed: false,
-  },
+  { quarter: 'Q1 2026', title: 'Platform Foundation', current: true },
+  { quarter: 'Q2 2026', title: 'Token Launch' },
+  { quarter: 'Q3 2026', title: 'Digital Asset Onboarding' },
+  { quarter: 'Q4 2026', title: 'DeFi Integration' },
+  { quarter: 'Q1 2027', title: 'Enterprise Expansion' },
+  { quarter: 'Q2 2027', title: 'Real-World Assets' },
 ]
 
 export default function RoadmapSection() {
   return (
-    <section className="py-section md:py-section px-5 md:px-10 bg-bg-dark">
-      <div className="max-w-[1000px] mx-auto">
-        <motion.h2
+    <section className="py-32 md:py-48 px-5 md:px-10 bg-bg-dark">
+      <div className="max-w-4xl mx-auto space-y-20">
+        {/* Section header */}
+        <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true }}
           variants={fadeInUp}
-          className="text-section md:text-section font-bold text-white text-center mb-12"
+          className="text-center"
         >
-          Roadmap & Milestones
-        </motion.h2>
+          <h2 className="text-5xl md:text-6xl font-bold text-white">
+            Roadmap
+          </h2>
+        </motion.div>
 
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10" />
-
-          {/* Milestones */}
-          <div className="space-y-16">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={milestone.quarter}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-100px' }}
-                variants={fadeInUp}
-                transition={{ delay: index * 0.15 }}
-                className="relative"
-              >
-                {/* Timeline Node */}
-                <div
-                  className={`absolute left-6 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-2 ${
-                    milestone.completed
-                      ? 'bg-white border-white'
-                      : milestone.current
-                      ? 'bg-white/20 border-white'
-                      : 'bg-bg-dark border-white/20'
-                  }`}
-                />
-
-                {/* Content */}
-                <div className={`ml-20 md:ml-0 ${index % 2 === 0 ? 'md:pr-[calc(50%+40px)]' : 'md:pl-[calc(50%+40px)]'}`}>
-                  <div className="bg-bg-dark-secondary/50 backdrop-blur-card border border-white/10 rounded-card p-6">
-                    <div className="text-sm font-semibold text-text-secondary mb-2">
-                      {milestone.quarter}
-                      {milestone.current && (
-                        <span className="ml-2 px-2 py-1 bg-white/10 rounded text-xs">
-                          CURRENT
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {milestone.title}
-                    </h3>
-                    <p className="text-base text-text-secondary leading-relaxed">
-                      {milestone.description}
-                    </p>
+        {/* Timeline */}
+        <div className="space-y-12">
+          {milestones.map((milestone, index) => (
+            <motion.div
+              key={milestone.quarter}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-100px' }}
+              variants={fadeInUp}
+              transition={{ delay: index * 0.08 }}
+              className="group"
+            >
+              <div className="flex items-start gap-6 md:gap-12">
+                {/* Quarter */}
+                <div className="flex-shrink-0 w-24 md:w-32">
+                  <div className="text-sm font-medium text-text-muted">
+                    {milestone.quarter}
                   </div>
+                  {milestone.current && (
+                    <div className="mt-2 text-xs text-white/50">CURRENT</div>
+                  )}
                 </div>
-              </motion.div>
-            ))}
-          </div>
+
+                {/* Dot */}
+                <div className="flex-shrink-0 mt-1">
+                  <div className={`w-3 h-3 rounded-full ${
+                    milestone.current ? 'bg-white' : 'bg-white/20'
+                  }`} />
+                </div>
+
+                {/* Title */}
+                <div className="flex-1 pt-0">
+                  <h3 className="text-2xl md:text-3xl font-semibold text-white group-hover:text-white/80 transition-colors">
+                    {milestone.title}
+                  </h3>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
