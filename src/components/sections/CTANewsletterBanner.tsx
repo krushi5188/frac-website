@@ -6,10 +6,10 @@ import { useState } from 'react'
 
 export default function CTANewsletterBanner() {
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -19,12 +19,40 @@ export default function CTANewsletterBanner() {
       return
     }
 
-    setStatus('success')
-    setEmail('')
+    setStatus('loading')
+    setErrorMessage('')
 
-    setTimeout(() => {
-      setStatus('idle')
-    }, 5000)
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to join waitlist')
+      }
+
+      setStatus('success')
+      setEmail('')
+
+      // Reset to idle after 5 seconds
+      setTimeout(() => {
+        setStatus('idle')
+      }, 5000)
+
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage(
+        error instanceof Error 
+          ? error.message 
+          : 'Something went wrong. Please try again.'
+      )
+    }
   }
 
   return (
@@ -68,13 +96,15 @@ export default function CTANewsletterBanner() {
                   setErrorMessage('')
                 }}
                 placeholder="your@email.com"
-                className="w-full bg-white/[0.02] border border-white/10 text-white placeholder:text-text-muted rounded-2xl px-6 py-4 text-lg focus:outline-none focus:border-white/20 transition-colors"
+                disabled={status === 'loading'}
+                className="w-full bg-white/[0.02] border border-white/10 text-white placeholder:text-text-muted rounded-2xl px-6 py-4 text-lg focus:outline-none focus:border-white/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <button
                 type="submit"
-                className="w-full bg-white text-black font-semibold px-6 py-4 rounded-2xl text-lg hover:bg-white/90 transition-colors"
+                disabled={status === 'loading'}
+                className="w-full bg-white text-black font-semibold px-6 py-4 rounded-2xl text-lg hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Join Waitlist
+                {status === 'loading' ? 'Joining...' : 'Join Waitlist'}
               </button>
             </div>
           )}
@@ -83,7 +113,7 @@ export default function CTANewsletterBanner() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="mt-2 text-sm text-text-muted"
+              className="mt-2 text-sm text-red-400"
             >
               {errorMessage}
             </motion.p>
