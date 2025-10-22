@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ReactNode, useRef, useState } from 'react'
+import { useIsTouchDevice } from '@/hooks/useIsTouchDevice'
 
 interface ButtonProps {
   variant?: 'primary' | 'secondary'
@@ -20,9 +21,11 @@ export default function Button({
 }: ButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [position, setPosition] = useState({ x: 0, y: 0 })
+  const isTouchDevice = useIsTouchDevice()
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (!buttonRef.current) return
+    // Disable magnetic effect on touch devices for performance
+    if (isTouchDevice || !buttonRef.current) return
     
     const rect = buttonRef.current.getBoundingClientRect()
     const centerX = rect.left + rect.width / 2
@@ -55,9 +58,9 @@ export default function Button({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       animate={{ 
-        x: position.x, 
-        y: position.y,
-        scale: position.x !== 0 || position.y !== 0 ? 1.02 : 1
+        x: isTouchDevice ? 0 : position.x, 
+        y: isTouchDevice ? 0 : position.y,
+        scale: isTouchDevice ? 1 : (position.x !== 0 || position.y !== 0 ? 1.02 : 1)
       }}
       transition={{ 
         type: "spring", 
