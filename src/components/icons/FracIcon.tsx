@@ -15,8 +15,8 @@ export default function FracIcon({ size = 120, className = '' }: FracIconProps) 
     >
       <defs>
         <linearGradient id="fracGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#14b8a6" />
-          <stop offset="100%" stopColor="#0d9488" />
+          <stop offset="0%" stopColor="#7c3aed" />
+          <stop offset="100%" stopColor="#5b21b6" />
         </linearGradient>
       </defs>
 
