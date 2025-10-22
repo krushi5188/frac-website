@@ -668,13 +668,3 @@ export class BridgeModule {
     throw new Error("Not implemented");
   }
 }
-
-// Export types from generated IDLs
-export * from "../target/types/frac_token";
-export * from "../target/types/staking";
-export * from "../target/types/fractional_ownership";
-export * from "../target/types/governance";
-export * from "../target/types/access_control";
-export * from "../target/types/rewards";
-export * from "../target/types/enterprise";
-export * from "../target/types/bridge";
