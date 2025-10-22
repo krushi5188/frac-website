@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { fadeInUp } from '@/lib/animations'
 import { useRef, useState } from 'react'
+import { useIsTouchDevice } from '@/hooks/useIsTouchDevice'
 import {
   PieChart,
   ArrowRightLeft,
@@ -69,9 +70,11 @@ function UtilityCard({ utility, index }: { utility: typeof utilities[0], index: 
   const cardRef = useRef<HTMLDivElement>(null)
   const [rotateX, setRotateX] = useState(0)
   const [rotateY, setRotateY] = useState(0)
+  const isTouchDevice = useIsTouchDevice()
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return
+    // Disable 3D tilt on touch devices for performance
+    if (isTouchDevice || !cardRef.current) return
 
     const rect = cardRef.current.getBoundingClientRect()
     const centerX = rect.left + rect.width / 2
@@ -103,19 +106,19 @@ function UtilityCard({ utility, index }: { utility: typeof utilities[0], index: 
       className="group relative"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ perspective: 1000 }}
+      style={{ perspective: isTouchDevice ? undefined : 1000 }}
     >
       <motion.div
         animate={{
-          rotateX,
-          rotateY,
+          rotateX: isTouchDevice ? 0 : rotateX,
+          rotateY: isTouchDevice ? 0 : rotateY,
         }}
         transition={{
           type: "spring",
           stiffness: 200,
           damping: 20
         }}
-        style={{ transformStyle: 'preserve-3d' }}
+        style={{ transformStyle: isTouchDevice ? undefined : 'preserve-3d' }}
         className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] hover:border-accent-blue/20 transition-all duration-500 h-full flex flex-col min-h-[220px]"
       >
         {/* Icon */}
