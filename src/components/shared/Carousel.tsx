@@ -115,7 +115,7 @@ export default function Carousel({
         <button
           onClick={handlePrevious}
           aria-label="Previous card"
-          className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 items-center justify-center w-12 h-12 rounded-full bg-bg-dark-secondary/90 backdrop-blur-card border border-primary-teal/20 text-primary-teal hover:bg-primary-teal hover:text-white transition-all duration-200 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-primary-teal"
+          className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 items-center justify-center w-12 h-12 rounded-full bg-bg-navy-light/90 backdrop-blur-card border border-primary-purple/20 text-primary-purple hover:bg-primary-purple hover:text-white transition-all duration-200 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-primary-purple"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
@@ -125,7 +125,7 @@ export default function Carousel({
         <button
           onClick={handleNext}
           aria-label="Next card"
-          className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 items-center justify-center w-12 h-12 rounded-full bg-bg-dark-secondary/90 backdrop-blur-card border border-primary-teal/20 text-primary-teal hover:bg-primary-teal hover:text-white transition-all duration-200 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-primary-teal"
+          className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 items-center justify-center w-12 h-12 rounded-full bg-bg-navy-light/90 backdrop-blur-card border border-primary-purple/20 text-primary-purple hover:bg-primary-purple hover:text-white transition-all duration-200 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-primary-purple"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
@@ -138,10 +138,10 @@ export default function Carousel({
             key={index}
             onClick={() => handleDotClick(index)}
             aria-label={`Go to slide ${index + 1}`}
-            className={`w-2 h-2 rounded-full transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary-teal ${
+            className={`w-2 h-2 rounded-full transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary-purple ${
               currentIndex === index
-                ? 'bg-primary-teal w-8'
-                : 'bg-primary-teal/30 hover:bg-primary-teal/50'
+                ? 'bg-primary-purple w-8'
+                : 'bg-primary-purple/30 hover:bg-primary-purple/50'
             }`}
           />
         ))}
