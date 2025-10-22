@@ -7,7 +7,7 @@ export default function OverviewSection() {
   return (
     <section
       id="overview"
-      className="py-section md:py-section px-5 bg-bg-dark"
+      className="py-section md:py-section px-5 bg-bg-navy"
     >
       <div className="max-w-container mx-auto text-center">
         <motion.h2
