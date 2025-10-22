@@ -1,13 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { fadeInUp, fadeInScale, pulse } from '@/lib/animations'
+import { fadeInUp, fadeInScale } from '@/lib/animations'
 
 export default function ConceptSummarySection() {
   return (
     <section
       id="ecosystem"
-      className="py-section md:py-section px-5 md:px-10 bg-bg-navy-light/30 backdrop-blur-card"
+      className="py-section md:py-section px-5 md:px-10 bg-bg-dark-secondary/30 backdrop-blur-card border-y border-white/5"
     >
       <div className="max-w-container mx-auto">
         <motion.h2
@@ -15,7 +15,7 @@ export default function ConceptSummarySection() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeInUp}
-          className="text-section md:text-section font-bold text-gradient text-center mb-8"
+          className="text-section md:text-section font-bold text-white text-center mb-8"
         >
           The Complete Ecosystem
         </motion.h2>
@@ -44,64 +44,66 @@ export default function ConceptSummarySection() {
           className="relative w-full max-w-[600px] h-[400px] mx-auto mb-10"
         >
           <svg viewBox="0 0 600 400" className="w-full h-full">
-            <defs>
-              <linearGradient id="ecosystemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#7c3aed" />
-                <stop offset="100%" stopColor="#5b21b6" />
-              </linearGradient>
-            </defs>
-
             {/* Connecting Lines */}
-            <line x1="150" y1="120" x2="300" y2="200" stroke="#7c3aed" strokeWidth="2" opacity="0.5" />
-            <line x1="450" y1="120" x2="300" y2="200" stroke="#7c3aed" strokeWidth="2" opacity="0.5" />
-            <line x1="300" y1="200" x2="300" y2="320" stroke="#7c3aed" strokeWidth="2" opacity="0.5" />
+            <line x1="150" y1="120" x2="300" y2="200" stroke="#ffffff" strokeWidth="1" opacity="0.2" />
+            <line x1="450" y1="120" x2="300" y2="200" stroke="#ffffff" strokeWidth="1" opacity="0.2" />
+            <line x1="300" y1="200" x2="300" y2="320" stroke="#ffffff" strokeWidth="1" opacity="0.2" />
 
             {/* Assets Circle (Top Left) */}
-            <motion.circle
+            <circle
               cx="150"
               cy="120"
               r="60"
-              fill="url(#ecosystemGradient)"
-              opacity="0.8"
-              animate={pulse}
+              fill="#ffffff"
+              opacity="0.05"
+              stroke="#ffffff"
+              strokeWidth="1"
+              strokeOpacity="0.2"
             />
             <text x="150" y="125" textAnchor="middle" fill="white" fontSize="18" fontWeight="600">
               Assets
             </text>
 
             {/* Users Circle (Top Right) */}
-            <motion.circle
+            <circle
               cx="450"
               cy="120"
               r="60"
-              fill="url(#ecosystemGradient)"
-              opacity="0.8"
-              animate={pulse}
+              fill="#ffffff"
+              opacity="0.05"
+              stroke="#ffffff"
+              strokeWidth="1"
+              strokeOpacity="0.2"
             />
             <text x="450" y="125" textAnchor="middle" fill="white" fontSize="18" fontWeight="600">
               Users
             </text>
 
             {/* $FRAC Circle (Center, Larger) */}
-            <motion.circle
+            <circle
               cx="300"
               cy="200"
               r="80"
-              fill="url(#ecosystemGradient)"
-              animate={pulse}
+              fill="#ffffff"
+              opacity="0.1"
+              stroke="#ffffff"
+              strokeWidth="1"
+              strokeOpacity="0.3"
             />
             <text x="300" y="210" textAnchor="middle" fill="white" fontSize="24" fontWeight="700">
               $FRAC
             </text>
 
             {/* Liquidity Circle (Bottom) */}
-            <motion.circle
+            <circle
               cx="300"
               cy="320"
               r="60"
-              fill="url(#ecosystemGradient)"
-              opacity="0.8"
-              animate={pulse}
+              fill="#ffffff"
+              opacity="0.05"
+              stroke="#ffffff"
+              strokeWidth="1"
+              strokeOpacity="0.2"
             />
             <text x="300" y="325" textAnchor="middle" fill="white" fontSize="18" fontWeight="600">
               Liquidity
