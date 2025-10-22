@@ -98,11 +98,11 @@ export default function CoreUtilitiesSection() {
                 transition={{ delay: index * 0.05 }}
                 className="group relative"
               >
-                <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 h-full flex flex-col min-h-[220px]">
+                <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] hover:border-accent-blue/20 transition-all duration-500 h-full flex flex-col min-h-[220px]">
                   {/* Icon */}
                   <div className="mb-6">
-                    <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-white/10 transition-colors duration-500">
-                      <Icon className="w-6 h-6 text-white/70" strokeWidth={1.5} />
+                    <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-accent-blue/10 transition-colors duration-500">
+                      <Icon className="w-6 h-6 text-white/70 group-hover:text-accent-blue transition-colors duration-500" strokeWidth={1.5} />
                     </div>
                   </div>
 
@@ -116,8 +116,8 @@ export default function CoreUtilitiesSection() {
                     </p>
                   </div>
 
-                  {/* Subtle corner gradient */}
-                  <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-white/[0.02] to-transparent rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {/* Subtle corner gradient with blue tint */}
+                  <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-accent-blue/[0.05] to-transparent rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </motion.div>
             )
