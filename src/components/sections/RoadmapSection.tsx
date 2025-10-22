@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { fadeInUp, pulse } from '@/lib/animations'
+import { fadeInUp } from '@/lib/animations'
 
 const milestones = [
   {
@@ -51,21 +51,21 @@ const milestones = [
 
 export default function RoadmapSection() {
   return (
-    <section className="py-section md:py-section px-5 md:px-10 bg-bg-navy">
+    <section className="py-section md:py-section px-5 md:px-10 bg-bg-dark">
       <div className="max-w-[1000px] mx-auto">
         <motion.h2
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeInUp}
-          className="text-section md:text-section font-bold text-gradient text-center mb-12"
+          className="text-section md:text-section font-bold text-white text-center mb-12"
         >
           Roadmap & Milestones
         </motion.h2>
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary-purple/30" />
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10" />
 
           {/* Milestones */}
           <div className="space-y-16">
@@ -80,22 +80,23 @@ export default function RoadmapSection() {
                 className="relative"
               >
                 {/* Timeline Node */}
-                <motion.div
-                  className={`absolute left-6 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-3 ${
+                <div
+                  className={`absolute left-6 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-2 ${
                     milestone.completed
-                      ? 'bg-primary-purple border-primary-purple'
-                      : 'bg-bg-navy border-primary-purple/30'
+                      ? 'bg-white border-white'
+                      : milestone.current
+                      ? 'bg-white/20 border-white'
+                      : 'bg-bg-dark border-white/20'
                   }`}
-                  animate={milestone.completed ? pulse : {}}
                 />
 
                 {/* Content */}
                 <div className={`ml-20 md:ml-0 ${index % 2 === 0 ? 'md:pr-[calc(50%+40px)]' : 'md:pl-[calc(50%+40px)]'}`}>
-                  <div className="bg-bg-navy-light/30 backdrop-blur-card border border-primary-purple/20 rounded-card p-6">
-                    <div className="text-sm font-semibold text-primary-purple mb-2">
+                  <div className="bg-bg-dark-secondary/50 backdrop-blur-card border border-white/10 rounded-card p-6">
+                    <div className="text-sm font-semibold text-text-secondary mb-2">
                       {milestone.quarter}
                       {milestone.current && (
-                        <span className="ml-2 px-2 py-1 bg-primary-purple/20 rounded text-xs">
+                        <span className="ml-2 px-2 py-1 bg-white/10 rounded text-xs">
                           CURRENT
                         </span>
                       )}
