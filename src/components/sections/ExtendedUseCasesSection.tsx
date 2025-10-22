@@ -17,7 +17,7 @@ const useCases = [
     id: 2,
     icon: Building2,
     title: 'Real-World Asset (RWA) Tokenization',
-    description: 'Real estate, art, commodities',
+    description: 'Fine art, collectibles, and tokenized commodities',
     role: 'Governance and transactional currency',
   },
   {
