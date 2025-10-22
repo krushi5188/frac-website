@@ -1,6 +1,7 @@
 'use client'
 
-import UtilityCard from './UtilityCard'
+import { motion } from 'framer-motion'
+import { fadeInUp } from '@/lib/animations'
 import {
   PieChart,
   ArrowRightLeft,
@@ -15,83 +16,114 @@ import {
 const utilities = [
   {
     id: 1,
-    title: 'Fractional Ownership Layer',
-    description:
-      '$FRAC represents fractional ownership of underlying assets — whether digital (NFTs, IP, metaverse assets) or tokenized commodities. It allows users to hold, trade, and transfer ownership portions seamlessly through blockchain infrastructure.',
+    title: 'Fractional Ownership',
+    description: 'Own portions of high-value digital assets',
     icon: PieChart,
-    pattern: 'A' as const,
   },
   {
     id: 2,
-    title: 'Ecosystem Transaction Medium',
-    description:
-      'Within the FractionalBase ecosystem, all transactions—be it asset creation, listing, fractional sale, or redemption—are denominated in $FRAC. This positions it as both a unit of exchange and value store for platform users.',
+    title: 'Transaction Medium',
+    description: 'Native currency for all platform activity',
     icon: ArrowRightLeft,
-    pattern: 'B' as const,
   },
   {
     id: 3,
-    title: 'Staking and Yield Mechanics',
-    description:
-      '$FRAC holders can stake tokens to participate in network validation, liquidity bootstrapping, or fractional asset pool creation. Staking directly translates to higher yield rates, better placement in tokenized asset offerings, and priority access to premium fractional listings.',
+    title: 'Staking & Yield',
+    description: 'Earn rewards through network participation',
     icon: Lock,
-    pattern: 'A' as const,
   },
   {
     id: 4,
-    title: 'Governance and DAO Voting Rights',
-    description:
-      'FractionalBase governance adopts a decentralized model where $FRAC represents voting power. Holders can vote on new asset onboarding, platform upgrades, fee structures, and tokenomics proposals, ensuring the community leads platform direction.',
+    title: 'Governance',
+    description: 'Vote on platform decisions and upgrades',
     icon: Vote,
-    pattern: 'B' as const,
   },
   {
     id: 5,
-    title: 'Access Control and Whitelisting',
-    description:
-      'Certain functionalities—like accessing exclusive fractionalized portfolios, algorithmic trading strategies, or analytical dashboards—will be gated to $FRAC holders, balancing utility with scarcity and incentivizing token retention across the ecosystem.',
+    title: 'Access Control',
+    description: 'Unlock exclusive features and portfolios',
     icon: Key,
-    pattern: 'A' as const,
   },
   {
     id: 6,
-    title: 'Reward and Loyalty Driver',
-    description:
-      'FractionalBase\'s engagement model gives $FRAC rewards for community actions, including liquidity provision, referrals, project voting, or staking participation. This drives circular token velocity while maintaining intrinsic value through capped supply mechanisms.',
+    title: 'Rewards',
+    description: 'Get tokens for community contributions',
     icon: Gift,
-    pattern: 'B' as const,
   },
   {
     id: 7,
-    title: 'Enterprise & Partner Collateralization',
-    description:
-      'B2B and institutional partners within the ecosystem may use $FRAC as collateral or payment for token issuance, fractional listing fees, and market-making incentives. Holding specific thresholds of $FRAC can unlock commercial discounts and enhanced exposure for enterprise assets.',
+    title: 'Enterprise',
+    description: 'Collateral for institutional partners',
     icon: Handshake,
-    pattern: 'A' as const,
   },
   {
     id: 8,
-    title: 'Cross-Chain Liquidity Layer',
-    description:
-      '$FRAC is designed to be chain-agnostic with interoperable bridges, enabling fractional asset transfers across major blockchain networks (e.g., Solana, Ethereum, BSC). This ensures global liquidity access across tokenized markets.',
+    title: 'Cross-Chain',
+    description: 'Bridge assets across blockchains',
     icon: Network,
-    pattern: 'B' as const,
   },
 ]
 
 export default function CoreUtilitiesSection() {
   return (
-    <div id="utilities">
-      {utilities.map((utility, index) => (
-        <UtilityCard
-          key={utility.id}
-          title={utility.title}
-          description={utility.description}
-          icon={utility.icon}
-          pattern={utility.pattern}
-          index={index}
-        />
-      ))}
-    </div>
+    <section id="utilities" className="py-32 md:py-48 px-5 bg-bg-dark">
+      <div className="max-w-7xl mx-auto space-y-20">
+        {/* Section header */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="text-center space-y-6"
+        >
+          <h2 className="text-5xl md:text-6xl font-bold text-white">
+            Eight core utilities
+          </h2>
+          <p className="text-xl text-text-secondary font-light max-w-2xl mx-auto">
+            Everything you need in a single token
+          </p>
+        </motion.div>
+
+        {/* Bento box grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {utilities.map((utility, index) => {
+            const Icon = utility.icon
+            return (
+              <motion.div
+                key={utility.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-100px' }}
+                variants={fadeInUp}
+                transition={{ delay: index * 0.05 }}
+                className="group relative"
+              >
+                <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.04] transition-all duration-500 h-full flex flex-col min-h-[220px]">
+                  {/* Icon */}
+                  <div className="mb-6">
+                    <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-white/10 transition-colors duration-500">
+                      <Icon className="w-6 h-6 text-white/70" strokeWidth={1.5} />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 space-y-3">
+                    <h3 className="text-2xl font-semibold text-white">
+                      {utility.title}
+                    </h3>
+                    <p className="text-base text-text-muted font-light leading-relaxed">
+                      {utility.description}
+                    </p>
+                  </div>
+
+                  {/* Subtle corner gradient */}
+                  <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-white/[0.02] to-transparent rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
   )
 }
