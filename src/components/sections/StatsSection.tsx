@@ -23,14 +23,14 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-section md:py-section px-5 md:px-10 bg-bg-navy-light/30 backdrop-blur-card">
+    <section className="py-section md:py-section px-5 md:px-10 bg-bg-dark-secondary/30 backdrop-blur-card border-y border-white/5">
       <div className="max-w-container mx-auto">
         <motion.h2
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeInUp}
-          className="text-section md:text-section font-bold text-gradient text-center mb-12"
+          className="text-section md:text-section font-bold text-white text-center mb-12"
         >
           Key Metrics
         </motion.h2>
@@ -46,13 +46,13 @@ export default function StatsSection() {
               transition={{ delay: index * 0.2 }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-text-gold mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
                 {stat.value}
               </div>
               <div className="text-xl md:text-2xl font-semibold text-text-secondary mb-1">
                 {stat.label}
               </div>
-              <div className="text-base text-text-secondary">
+              <div className="text-base text-text-muted">
                 {stat.description}
               </div>
             </motion.div>
