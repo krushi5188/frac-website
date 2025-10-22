@@ -1,4 +1,3 @@
-import ProgressIndicator from '@/components/shared/ProgressIndicator'
 import HeroSection from '@/components/sections/HeroSection'
 import OverviewSection from '@/components/sections/OverviewSection'
 import StatsSection from '@/components/sections/StatsSection'
@@ -12,7 +11,6 @@ import FooterSection from '@/components/sections/FooterSection'
 export default function Home() {
   return (
     <main className="relative">
-      <ProgressIndicator />
       <HeroSection />
       <OverviewSection />
       <StatsSection />
