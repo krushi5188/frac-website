@@ -7,7 +7,7 @@ export default function OverviewSection() {
   return (
     <section
       id="overview"
-      className="py-section md:py-section px-5 bg-bg-navy"
+      className="py-section md:py-section px-5 bg-bg-dark"
     >
       <div className="max-w-container mx-auto text-center">
         <motion.h2
@@ -15,7 +15,7 @@ export default function OverviewSection() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeInUp}
-          className="text-section md:text-section font-bold text-gradient mb-8"
+          className="text-section md:text-section font-bold text-white mb-8"
         >
           The Future of Asset Ownership
         </motion.h2>
