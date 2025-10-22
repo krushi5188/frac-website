@@ -21,9 +21,9 @@ const milestones = [
   },
   {
     quarter: 'Q3 2026',
-    title: 'Asset Onboarding',
+    title: 'Digital Asset Onboarding',
     description:
-      'First fractional real-world assets tokenized. Partnership with leading RWA custodians established.',
+      'First fractional NFTs and digital assets tokenized. Launch of metaverse asset fractionalization platform.',
     completed: false,
   },
   {
@@ -37,14 +37,14 @@ const milestones = [
     quarter: 'Q1 2027',
     title: 'Enterprise Expansion',
     description:
-      'Institutional-grade API and white-label solutions. Strategic partnerships with asset managers.',
+      'Institutional-grade API and white-label solutions. Strategic partnerships with digital asset custodians.',
     completed: false,
   },
   {
     quarter: 'Q2-Q4 2027',
-    title: 'Global Scale',
+    title: 'Real-World Assets & Global Scale',
     description:
-      'AI-powered portfolio optimization. Expansion into emerging markets and new asset classes.',
+      'Real estate tokenization (pending regulatory approval). AI-powered portfolio optimization. Expansion into emerging markets and new asset classes.',
     completed: false,
   },
 ]
