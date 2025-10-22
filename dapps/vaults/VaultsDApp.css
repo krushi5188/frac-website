@@ -1,0 +1,586 @@
+/* Vaults dApp Styles - Inherits base styles from StakingDApp.css */
+
+.vaults-dapp {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background-attachment: fixed;
+}
+
+/* Marketplace Grid */
+.marketplace-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+/* Vault Card */
+.vault-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.vault-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.vault-card-image {
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.asset-type-badge-small {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.vault-card-body {
+  padding: 1.5rem;
+}
+
+.vault-card-body h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+}
+
+.vault-description-short {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0 0 1rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.vault-card-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.card-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.card-stat-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.vault-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.price-per-share {
+  font-weight: 600;
+  color: #10b981;
+}
+
+.view-details {
+  color: #667eea;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Vault Detail */
+.vault-detail {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn {
+  background: #f3f4f6;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 2rem;
+}
+
+.back-btn:hover {
+  background: #e5e7eb;
+}
+
+.vault-detail-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.vault-info-card {
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+.vault-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.asset-type-badge {
+  background: #10b981;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.vault-id {
+  font-family: 'Courier New', monospace;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.vault-info-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  color: #1f2937;
+}
+
+.vault-description {
+  color: #6b7280;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.vault-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Trading Section */
+.trading-section {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 2rem;
+}
+
+.trading-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid #e5e7eb;
+  height: fit-content;
+}
+
+.trading-card h3 {
+  margin: 0 0 1.5rem 0;
+  color: #1f2937;
+}
+
+.order-book-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid #e5e7eb;
+}
+
+.order-book-card h3 {
+  margin: 0 0 1.5rem 0;
+  color: #1f2937;
+}
+
+.orders-list {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.orders-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 100px;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: #f9fafb;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.order-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 100px;
+  gap: 1rem;
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+  align-items: center;
+}
+
+.btn-buy-small {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-buy-small:hover {
+  background: #059669;
+}
+
+/* Create Vault */
+.create-vault {
+  display: flex;
+  justify-content: center;
+}
+
+.create-vault-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+}
+
+.create-vault-card h2 {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin: 0 0 2rem 0;
+}
+
+.form-section {
+  margin-bottom: 2.5rem;
+}
+
+.form-section h3 {
+  color: #1f2937;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.3rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.asset-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.asset-type-option {
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  padding: 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.asset-type-option:hover {
+  border-color: #10b981;
+}
+
+.asset-type-option.selected {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
+.type-label {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.type-desc {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.creation-summary {
+  background: #f0fdf4;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  border: 1px solid #10b981;
+}
+
+.creation-summary h3 {
+  margin: 0 0 1rem 0;
+  color: #065f46;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summary-item span:first-child {
+  font-size: 0.875rem;
+  color: #059669;
+}
+
+.summary-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #065f46;
+}
+
+.summary-value.insufficient {
+  color: #dc2626;
+}
+
+/* Portfolio */
+.portfolio {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-header {
+  margin-bottom: 2rem;
+}
+
+.portfolio-header h2 {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+}
+
+.portfolio-header p {
+  color: #6b7280;
+  margin: 0;
+}
+
+.portfolio-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-stat-card {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  padding: 2rem;
+  border-radius: 16px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.stat-icon {
+  font-size: 3rem;
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.portfolio-stat-card .stat-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.portfolio-stat-card .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Calculation Box */
+.calculation-box {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  color: #6b7280;
+}
+
+.calc-row.total {
+  border-top: 2px solid #e5e7eb;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+  margin: 0 0 1.5rem 0;
+  color: #1f2937;
+}
+
+.order-details {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  color: #1f2937;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.modal-actions button {
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .trading-section {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .marketplace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .asset-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .vault-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-stats {
+    grid-template-columns: 1fr;
+  }
+}
